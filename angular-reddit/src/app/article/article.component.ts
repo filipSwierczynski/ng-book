@@ -1,16 +1,19 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding} from '@angular/core';
 import { Article } from './article.model';
+import { Input } from '@angular/core';
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent {
+
+
   @HostBinding('attr.class') cssClass = 'row';
-  article: Article;
+  @Input() article: Article;
 
   constructor() {
-    this.article = new Article('Angular','http://angular.io',10)
+    
   }
 
   voteUp():boolean {
